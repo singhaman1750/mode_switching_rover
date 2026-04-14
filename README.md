@@ -1,3 +1,10 @@
+# Mode switching rover
+
+1. **USD file location:** source/robot_lab/data/Robots/mode_switching_rover
+
+
+
+----
 # robot_lab
 
 [![IsaacSim](https://img.shields.io/badge/IsaacSim-5.1.0-silver.svg)](https://docs.omniverse.nvidia.com/isaacsim/latest/overview.html)
