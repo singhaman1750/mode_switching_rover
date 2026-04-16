@@ -146,9 +146,9 @@ class ModeSwitchingRoverRoughEnvCfg(LocomotionVelocityRoughEnvCfg):
         self.rewards.joint_power.params["asset_cfg"].joint_names = self.leg_joint_names
         self.rewards.stand_still.weight = -1.0
         self.rewards.stand_still.params["asset_cfg"].joint_names = self.leg_joint_names
-        self.rewards.joint_pos_penalty.weight = -0.5
+        self.rewards.joint_pos_penalty.weight = 0 # -0.5
         self.rewards.joint_pos_penalty.params["asset_cfg"].joint_names = self.leg_joint_names
-        self.rewards.joint_mirror.weight = -0.05
+        self.rewards.joint_mirror.weight = 0 # -0.05
         self.rewards.joint_mirror.params["mirror_joints"] = [
             ["FR(A|B)$", "BL(A|B)$"],
             ["FL(A|B)$", "BR(A|B)$"],
