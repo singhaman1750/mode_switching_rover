@@ -17,7 +17,7 @@ MODE_SWITCHING_ROVER_CFG = ArticulationCfg(
     spawn=sim_utils.UsdFileCfg(
         usd_path=(
             f"{ISAACLAB_ASSETS_DATA_DIR}/Robots/"
-            "mode_switching_rover/mode_switching_rover3.usd"
+            "mode_switching_rover/mode_switching_rover4.usd"
         ),
         activate_contact_sensors=True,
         rigid_props=sim_utils.RigidBodyPropertiesCfg(
@@ -45,9 +45,9 @@ MODE_SWITCHING_ROVER_CFG = ArticulationCfg(
     actuators={
         "actuatorA": DCMotorCfg(
             joint_names_expr=["FRA", "FLA", "BRA", "BLA"],
-            effort_limit=200.0,
-            saturation_effort=200.0,
-            velocity_limit=23.0,
+            effort_limit=150.0,
+            saturation_effort=150.0,
+            velocity_limit=13.0,
             stiffness=160.0,
             damping=5.0,
             friction=0.0,
@@ -59,21 +59,31 @@ MODE_SWITCHING_ROVER_CFG = ArticulationCfg(
                 "BRB",
                 "BLB",
             ],
-            effort_limit=200.0,
-            saturation_effort=200.0,
-            velocity_limit=23.0,
+            effort_limit=150.0,
+            saturation_effort=150.0,
+            velocity_limit=13.0,
             stiffness=160.0,
             damping=5.0,
             friction=0.0,
         ),
-        "wheel": ImplicitActuatorCfg(
+        "wheel": DCMotorCfg(
             joint_names_expr=["FRP", "FLP", "BRP", "BLP"],
-            effort_limit_sim=20.0,
-            velocity_limit_sim=50.0,
+            effort_limit=50.0,
+            saturation_effort=50.0,
+            # velocity_limit_sim=50.0,
+            velocity_limit=20.0,
             stiffness=0.0,
             damping=1.0,
             friction=0.0,
         ),
+        # "wheel": ImplicitActuatorCfg(
+        #     joint_names_expr=["FRP", "FLP", "BRP", "BLP"],
+        #     effort_limit_sim=20.0,
+        #     velocity_limit_sim=50.0,
+        #     stiffness=0.0,
+        #     damping=1.0,
+        #     friction=0.0,
+        # ),
         "passive": ImplicitActuatorCfg(
             joint_names_expr=[
                 "FLD",
